@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import LeftNavCard from "../LeftNavCard/LeftNavCard";
 
 const LeftNav = () => {
   const [catagories, setCatagories] = useState([]);
@@ -23,6 +24,7 @@ const LeftNav = () => {
             </Link>
           </p>
         ))}
+        <LeftNavCard></LeftNavCard>
       </div>
     </div>
   );
