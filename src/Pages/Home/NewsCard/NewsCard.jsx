@@ -3,6 +3,9 @@ import { Card, Image } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { BsBookmark, BsShare, BsEye } from "react-icons/bs";
 import moment from "moment";
+import { Rating } from "@smastrom/react-rating";
+
+import "@smastrom/react-rating/style.css";
 const NewsCard = ({ news }) => {
   console.log(news);
   const {
@@ -45,8 +48,13 @@ const NewsCard = ({ news }) => {
         </Card.Text>
       </Card.Body>
       <Card.Footer className="text-muted d-flex align-items-center">
-        <div className="flex-grow-1">
-          <p>{rating?.number}</p>
+        <div className="flex-grow-1 d-flex align-items-center">
+          <Rating
+            style={{ maxWidth: 100 }}
+            value={Math.round(rating?.number || 0)}
+            readOnly
+          />
+          <span className="ms-2">{rating?.number}</span>
         </div>
         <div className="d-flex ">
           <BsEye className="mt-1"></BsEye>

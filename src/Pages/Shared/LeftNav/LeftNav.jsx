@@ -5,7 +5,7 @@ import LeftNavCard from "../LeftNavCard/LeftNavCard";
 const LeftNav = () => {
   const [catagories, setCatagories] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:3000/catagories")
+    fetch("https://the-news-dragon-server-shahin2525.vercel.app/catagories")
       .then((res) => res.json())
       .then((data) => setCatagories(data))
       .catch((error) => console.log(error));
